@@ -111,7 +111,7 @@ def get_pub_hols(start_year, end_year, output_folder_target, mode="binary"):
         combo_df.to_csv(output_filename, index=False)
 
     else:
-        print("Available modes are binary and raw")
+        print("Choose one of the available modes")
 
 
 # Get path of this script
