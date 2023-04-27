@@ -22,3 +22,7 @@ Indicates if a state has a holiday with a 1 or a 0, combining information by dat
 ### Raw
 
 Data in the format directly from the source, which has each holiday and state combination on its own row.
+
+### DB Friendly
+
+Data in a row by row format that is database friendly - and relevant to a work project I needed it for.
