@@ -9,7 +9,7 @@ The function `get_pub_hols` can be adjusted with the following arguments:
 1. `start_year` (Inclusive)
 2. `end_year` (Inclusive)
 3. `output_folder_target` folder for csv outputs, not including ending slash
-4. `mode`: Either `'binary'` or `'raw'`
+4. `mode`: Either `'binary'`, `'raw'` or `'db_friendly'`
 
 ## Output Modes
 
