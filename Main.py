@@ -77,4 +77,4 @@ def get_pub_hols(start_year, end_year, output_folder_target, mode="binary"):
 script_location = pathlib.Path(__file__).parent.resolve()
 
 # Calling the function
-get_pub_hols(2018, 2023, script_location, mode="binary")
+get_pub_hols(2010, 2026, script_location, mode="binary")
