@@ -12,7 +12,6 @@ pd.set_option('display.precision', 2)
 def get_pub_hols(start_year, end_year, output_folder_target, mode="binary"):
     # Defining states Lists
     states_list_str = "AU-WA,AU-ACT,AU-SA,AU-TAS,AU-VIC,AU-NT,AU-QLD,AU-NSW"
-    states_list_str_alt = "['AU-WA','AU-ACT','AU-SA','AU-TAS','AU-VIC','AU-NT','AU-QLD','AU-NSW']"
 
     # Defining states conversion dict
     states_conv_dict = {"AU-WA": "WA",
