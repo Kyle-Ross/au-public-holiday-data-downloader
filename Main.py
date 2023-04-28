@@ -1,5 +1,4 @@
 import pandas as pd
-from ast import literal_eval
 import pathlib
 
 # Setting print options
