@@ -14,7 +14,7 @@ def get_pub_hols(start_year, end_year, output_folder_target, mode="binary"):
 
     # Defining states conversion dict
     states_conv_dict = {"AU-WA": "WA",
-                        "AU-ACT": "SA",
+                        "AU-ACT": "ACT",
                         "AU-SA": "SA",
                         "AU-TAS": "TAS",
                         "AU-VIC": "VIC",
@@ -39,6 +39,22 @@ def get_pub_hols(start_year, end_year, output_folder_target, mode="binary"):
 
     # Converting date to date type
     combo_df['Date'] = combo_df['Date'].apply(lambda x: pd.to_datetime(x, format='%Y-%m-%d'))
+
+    # Dropping the index
+    combo_df = combo_df.reset_index(drop=True)
+
+    # Fixing known errors from the API
+    # -------------------------------
+
+    # Fixing Christmas
+    combo_df.loc[
+        combo_df['LocalName'] == 'Christmas Day', 'Date'] = pd.to_datetime(
+        '12/25/' + combo_df['Date'].dt.year.astype(str))
+
+    # Fixing Boxing Day
+    combo_df.loc[
+        combo_df['LocalName'] == 'Boxing Day', 'Date'] = pd.to_datetime(
+        '12/26/' + combo_df['Date'].dt.year.astype(str))
 
     # Sorting the df by date
     combo_df = combo_df.sort_values("Date")
@@ -117,3 +133,7 @@ script_location = pathlib.Path(__file__).parent.resolve()
 
 # Calling the function
 get_pub_hols(2010, 2026, script_location, mode="binary")
+
+get_pub_hols(2010, 2026, script_location, mode="db_friendly")
+
+get_pub_hols(2010, 2026, script_location, mode="raw")
